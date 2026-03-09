@@ -1,0 +1,14 @@
+{
+  "name": "vanilla-js-web-app-tests",
+  "version": "1.0.0",
+  "description": "Playwright tests for vanilla JS web app",
+  "scripts": {
+    "test": "playwright test",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
