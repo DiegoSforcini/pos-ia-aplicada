@@ -121,6 +121,7 @@ dist
 *.db.*
 *.db-shm
 *.db-wal
+.db/
 
 # Firebase cache directory
 .firebase/
