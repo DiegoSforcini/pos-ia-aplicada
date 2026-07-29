@@ -1,6 +1,7 @@
 import Fastify from 'fastify';
+import { OpenRouterService } from './openRouterService.ts';
 
-export const createServer = () => {
+export const createServer = (routerService: OpenRouterService) => {
   const app = Fastify({
     logger: false,
   });
@@ -18,7 +19,8 @@ export const createServer = () => {
   }, async (request, reply) => {
     try {
         const { question } = request.body as { question: string };
-        reply.send({ answer: `You asked: ${question}` });
+        const response = await routerService.generate(question);
+        reply.send(response);
     } catch (error) {
         console.error('Error handling /chat requests:', error);
         reply.status(500).send({ error: 'An error occurred while processing your request.' });
