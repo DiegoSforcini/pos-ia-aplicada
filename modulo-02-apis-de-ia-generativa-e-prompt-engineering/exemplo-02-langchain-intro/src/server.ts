@@ -18,7 +18,7 @@ export const createServer = () => {
   }, async (request, reply) => {
     try {
         const { question } = request.body as { question: string };
-        reply.send(question);
+        reply.send('ok');
     } catch (error) {
         console.error('Error handling /chat requests:', error);
         reply.status(500).send({ error: 'An error occurred while processing your request.' });
