@@ -1,4 +1,8 @@
 import Fastify from 'fastify';
+import { buildGraph } from './graph/graph.ts';
+import { HumanMessage } from 'langchain';
+
+const graph = buildGraph();
 
 export const createServer = () => {
   const app = Fastify({
@@ -18,7 +22,10 @@ export const createServer = () => {
   }, async (request, reply) => {
     try {
         const { question } = request.body as { question: string };
-        reply.send(question);
+        const response = await graph.invoke({
+          messages: [new HumanMessage(question)]
+        });
+        reply.send(response.output);
     } catch (error) {
         console.error('Error handling /chat requests:', error);
         reply.status(500).send({ error: 'An error occurred while processing your request.' });
