@@ -1,12 +1,10 @@
 import type { GraphState } from '../graph.ts';
 
-
 export function createSchedulerNode() {
   return async (state: GraphState): Promise<GraphState> => {
     console.log(`📅 Scheduling appointment...`);
 
     try {
-
 
       console.log(`✅ Appointment scheduled successfully`);
 
