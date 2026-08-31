@@ -22,8 +22,8 @@ export const config: ModelConfig = {
   xTitle: 'IA Devs - Prompt Chaining Article Generator',
   models: [
     // https://openrouter.ai/models?fmt=cards&max_price=0&order=throughput-high-to-low&supported_parameters=structured_outputs%2Cresponse_format
-    'dots-studio/dots-3-note-preview:free',
     'nvidia/nemotron-3-super-120b-a12b:free',
+    'dots-studio/dots-3-note-preview:free',
   ],
   provider: {
     sort: {

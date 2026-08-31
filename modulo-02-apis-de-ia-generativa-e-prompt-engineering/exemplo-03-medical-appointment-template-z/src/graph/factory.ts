@@ -4,8 +4,8 @@ import { OpenRouterService } from '../services/openRouterService.ts';
 import { buildAppointmentGraph } from './graph.ts';
 
 export function buildGraph() {
-  const llmClient = new OpenRouterService(config);
-  const appointmentService = new AppointmentService
+  const llmClient = new OpenRouterService(config)
+  const appointmentService = new AppointmentService()
   return buildAppointmentGraph(
     llmClient,
     appointmentService,
