@@ -26,7 +26,7 @@
   "author": "erickwendel",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^24.10.13",
+    "@types/node": "^24.19.0",
     "typescript": "^5.3.0"
   },
   "engines": {
